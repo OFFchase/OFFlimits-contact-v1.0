@@ -3,7 +3,7 @@ const client = new discord.Client()
 const { token, prefix, ServerID } = require("./config.json")
 
 client.on("ready", () => {
-console.log("I am ready to receive and Send Mails :D")
+console.log("I am ready to receive and Send Mails")
 
 
 client.user.setActivity("Watching My Dm's")
@@ -19,7 +19,7 @@ client.on("channelDelete", (channel) => {
         .setAuthor("OFFlimits bot", "https://media.discordapp.net/attachments/726594273889484960/726853235998064640/off.png?width=452&height=452")
         .setColor('RED')
         .setThumbnail(client.user.displayAvatarURL())
-        .setDescription("Your mail is deleted by moderator and if you have any questions you can open mail again by sending message here.")
+        .setDescription("Your mail was closed by moderatorI\nf you have any questions you can open mail again by sending message here.")
         .setFooter("Developed by Niklaus")
     return person.send(yembed)
     
@@ -91,6 +91,7 @@ client.on("message", async message => {
             .setColor("RED")
             .setThumbnail(client.user.displayAvatarURL())
             .setFooter("Mail is closed by " + message.author.username)
+            .setTimestamp()
             if(args[0]) yembed.setDescription(args.join(" "))
 
             return person.send(yembed)
@@ -131,7 +132,8 @@ client.on("message", async message => {
           .setDescription(message.content)
           .addField("Name", target.user.username)
           .addField("Account Creation Date", target.user.createdAt)
-          .addField("Direct Contact", "Yes(it means this mail is opened by a supporter)");
+          .addField("Direct Contact", "Yes(it means this mail is opened by a supporter)")
+          .setTimestamp();
 
           channel.send(nembed)
 
@@ -139,7 +141,8 @@ client.on("message", async message => {
           .setAuthor("_OFFlimits contact_")
           .setColor("GREEN")
           .setThumbnail(client.user.displayAvatarURL())
-          .setDescription("You have been contacted by Supporter of **" + message.guild.name + "**, Please wait until he send another message to you!");
+          .setDescription("You have been contacted by Supporter of **" + message.guild.name + "**, Please wait until he send another message to you!")
+          .setTimestamp();
           
           
           target.send(uembed);
@@ -149,7 +152,7 @@ client.on("message", async message => {
           .setColor("GREEN");
 
           return message.channel.send(newEmbed);
-      } else if(command == "help") {
+      } else if(command == "mailhelp") {
           let embed = new discord.MessageEmbed()
           .setAuthor('_OFFlimits contact_', client.user.displayAvatarURL())
           .setColor("GREEN")
@@ -185,6 +188,7 @@ client.on("message", async message => {
         .setColor("GREEN")
         .setFooter(message.author.username, message.author.displayAvatarURL({dynamic: true}))
         .setDescription(message.content)
+        .setTimestamp()
     
         return member.send(lembed)
     }
