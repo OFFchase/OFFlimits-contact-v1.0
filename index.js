@@ -18,9 +18,9 @@ client.on("channelDelete", (channel) => {
         let yembed = new discord.MessageEmbed()
         .setAuthor("OFFlimits bot", "https://media.discordapp.net/attachments/726594273889484960/726853235998064640/off.png?width=452&height=452")
         .setColor('RED')
-        .setThumbnail(client.user.displayAvatarURL())
+        .setThumbnail('https://media.discordapp.net/attachments/726552586274078872/726619715358687282/-ff.gif?width=420&height=420')
         .setDescription("Your mail was closed by moderatorI\nf you have any questions you can open mail again by sending message here.")
-        .setFooter('Developed by OFFlimits', 'https://media.discordapp.net/attachments/726594273889484960/726853235998064640/off.png?width=452&height=452')
+        .setFooter('Developed by OFFlimits', 'https://media.discordapp.net/attachments/726594273889484960/747501951851298826/source.gif?width=420&height=420')
     return person.send(yembed)
     
     }
@@ -141,7 +141,7 @@ client.on("message", async message => {
           let uembed = new discord.MessageEmbed()
           .setAuthor("_OFFlimits contact_")
           .setColor("GREEN")
-          .setThumbnail(client.user.displayAvatarURL())
+          .setThumbnail('https://media.discordapp.net/attachments/726552586274078872/726619715358687282/-ff.gif?width=420&height=420')
           .setDescription("You have been contacted by Supporter of **" + message.guild.name + "**, Please wait until he send another message to you!")
           .setTimestamp();
           
@@ -155,14 +155,14 @@ client.on("message", async message => {
           return message.channel.send(newEmbed);
       } else if(command == "mailhelp") {
           let embed = new discord.MessageEmbed()
-          .setAuthor('_OFFlimits contact_', client.user.displayAvatarURL())
+          .setAuthor('OFFlimits contact', client.user.displayAvatarURL())
           .setColor(0x7d1a8a)
           
         .setDescription("_Developed by Niklaus_")
         .addField(prefix + "setup", "Setup the modmail system(This is not for multiple server.)", true)
   
         .addField(prefix + "open", 'Let you open the mail to contact anyone with his ID', true)
-        .setThumbnail(client.user.displayAvatarURL())
+        .setThumbnail('https://media.discordapp.net/attachments/726552586274078872/726619715358687282/-ff.gif?width=420&height=420')
                     .addField(prefix + "close", "Close the mail in which you use this command.", true);
 
                     return message.channel.send(embed)
@@ -229,7 +229,7 @@ client.on("message", async message => {
           let sembed = new discord.MessageEmbed()
           .setAuthor("OFFlimits contact")
           .setColor("GREEN")
-          .setThumbnail(client.user.displayAvatarURL())
+          .setThumbnail('https://media.discordapp.net/attachments/726552586274078872/726619715358687282/-ff.gif?width=420&height=420')
           .setDescription("Conversation is now started, you will be contacted by supporters soon :D")
 
           message.author.send(sembed)
