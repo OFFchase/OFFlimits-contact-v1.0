@@ -20,7 +20,7 @@ client.on("channelDelete", (channel) => {
         .setColor('RED')
         .setThumbnail(client.user.displayAvatarURL())
         .setDescription("Your mail was closed by moderatorI\nf you have any questions you can open mail again by sending message here.")
-        .setFooter("Developed by Niklaus")
+        .setFooter('Developed by OFFlimits', 'https://media.discordapp.net/attachments/726594273889484960/726853235998064640/off.png?width=452&height=452')
     return person.send(yembed)
     
     }
@@ -94,7 +94,8 @@ client.on("message", async message => {
             .setTimestamp()
             if(args[0]) yembed.setDescription(args.join(" "))
 
-            return person.send(yembed)
+            return person.send(yembed) 
+            
 
         }
       } else if(command == "open") {
@@ -127,12 +128,12 @@ client.on("message", async message => {
 
           let nembed = new discord.MessageEmbed()
           .setAuthor("DETAILS", target.user.displayAvatarURL({dynamic: true}))
-          .setColor("BLUE")
+          .setColor(0x7d1a8a)
           .setThumbnail(target.user.displayAvatarURL({dynamic: true}))
           .setDescription(message.content)
           .addField("Name", target.user.username)
           .addField("Account Creation Date", target.user.createdAt)
-          .addField("Direct Contact", "Yes(it means this mail is opened by a supporter)")
+          .addField("Direct Contact", "(This mail is opened by a supporter)")
           .setTimestamp();
 
           channel.send(nembed)
@@ -149,13 +150,13 @@ client.on("message", async message => {
 
           let newEmbed = new discord.MessageEmbed()
           .setDescription("Opened The Mail: <#" + channel + ">")
-          .setColor("GREEN");
+          .setColor(0x7d1a8a);
 
           return message.channel.send(newEmbed);
       } else if(command == "mailhelp") {
           let embed = new discord.MessageEmbed()
           .setAuthor('_OFFlimits contact_', client.user.displayAvatarURL())
-          .setColor("GREEN")
+          .setColor(0x7d1a8a)
           
         .setDescription("_Developed by Niklaus_")
         .addField(prefix + "setup", "Setup the modmail system(This is not for multiple server.)", true)
@@ -236,12 +237,12 @@ client.on("message", async message => {
 
           let eembed = new discord.MessageEmbed()
           .setAuthor("DETAILS", message.author.displayAvatarURL({dynamic: true}))
-          .setColor("BLUE")
+          .setColor(0x7d1a8a)
           .setThumbnail(message.author.displayAvatarURL({dynamic: true}))
           .setDescription(message.content)
           .addField("Name", message.author.username)
           .addField("Account Creation Date", message.author.createdAt)
-          .addField("Direct Contact", "No(it means this mail is opened by person not a supporter)")
+          .addField("Direct Contact", "(This mail is opened by person not a supporter)")
 
 
         return mx.send(eembed)
@@ -254,6 +255,7 @@ client.on("message", async message => {
 
 
       main.send(xembed)
+      message.react('✉️');
 
   } 
   
