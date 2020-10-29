@@ -266,3 +266,27 @@ client.on("message", async message => {
 
 
 client.login(token)
+client.on('message', message => {
+    if (message.channel.type != 'text' || message.author.bot)
+      return;
+  
+    let command = message.content.split(' ')[0].slice(1);
+    let args = message.content.replace('.' + command, '').trim();
+    let isBotOwner = message.author.id == '644614223917219872';
+  
+    switch (command) {
+      case 'restartmail': {
+        if (!message.member.hasPermission(["MANAGE_MESSAGES"])) return message.channel.send("Cool right? but you cant use it, ADMINS ONLY!!!")
+  
+           message.channel.send(`Restarted\ ${Math.floor(message.createdAt - message.createdAt)}ms`)
+           
+          client.destroy()
+          
+            client.login(token);
+            console.log(`Yo bitch I'm online!`);
+            client.user.setActivity("Watching My Dm's")
+           
+        break;
+      }
+    }
+    });
