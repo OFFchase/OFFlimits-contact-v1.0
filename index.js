@@ -30,6 +30,16 @@ client.on("channelDelete", (channel) => {
 
 
 client.on("message", async message => {
+     const channel = await bot.channels.fetch('727010840074780674')
+
+  channel.messages.fetch().then((messages) => {
+    
+      channel.send('m ready to eat some mails').then((message) => {
+        message.react('✉️');
+      })
+    
+    
+  })
   if(message.author.bot) return;
 
   let args = message.content.slice(prefix.length).split(' ');
