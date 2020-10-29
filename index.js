@@ -18,9 +18,9 @@ client.on("channelDelete", (channel) => {
         let yembed = new discord.MessageEmbed()
         .setAuthor("OFFlimits bot", "https://media.discordapp.net/attachments/726594273889484960/726853235998064640/off.png?width=452&height=452")
         .setColor('RED')
-        .setThumbnail('https://media.discordapp.net/attachments/726552586274078872/726619715358687282/-ff.gif?width=420&height=420')
+        .setThumbnail('https://media.discordapp.net/attachments/726594273889484960/747501951851298826/source.gif?width=420&height=420')
         .setDescription("Your mail was closed by moderator\nIf you have any questions you can open mail again by sending message here.")
-        .setFooter('Developed by OFFlimits', 'https://media.discordapp.net/attachments/726594273889484960/747501951851298826/source.gif?width=420&height=420')
+        .setFooter('Developed by CHASE', 'https://media.discordapp.net/attachments/726594273889484960/747501951851298826/source.gif?width=420&height=420')
     return person.send(yembed)
     
     }
@@ -158,7 +158,7 @@ client.on("message", async message => {
           .setAuthor('OFFlimits contact', client.user.displayAvatarURL())
           .setColor(0x7d1a8a)
           
-        .setDescription("_Developed by Niklaus_")
+        .setDescription("_Developed by CHASE_")
         .addField(prefix + "setup", "Setup the modmail system(This is not for multiple server.)", true)
   
         .addField(prefix + "open", 'Let you open the mail to contact anyone with his ID', true)
