@@ -4,11 +4,14 @@ const { token, prefix, ServerID } = require("./config.json")
 
 client.on("ready", () => {
     
-      
+      const mChannel = message.guild.channels.get('727010840074780674');
+    message.mChannel.send('help');
 console.log("I am ready to receive and Send Mails")
 
 
 client.user.setActivity("Watching My Dm's")
+    
+    
 })
 
 client.on("channelDelete", (channel) => {
