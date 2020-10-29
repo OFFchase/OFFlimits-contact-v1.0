@@ -4,9 +4,9 @@ const { token, prefix, ServerID } = require("./config.json")
 
 client.on("ready", () => {
     const channel = '727010840074780674'
-      channel.message.send('m ready to eat some mails').then((message) => {
+      message.channel.send('m ready to eat some mails')
         message.react('✉️');
-      }
+      
 console.log("I am ready to receive and Send Mails")
 
 
