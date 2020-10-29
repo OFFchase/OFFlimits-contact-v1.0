@@ -3,9 +3,7 @@ const client = new discord.Client()
 const { token, prefix, ServerID } = require("./config.json")
 
 client.on("ready", () => {
-    let mChannel = '727010840074780674'
-      message.mChannel.send('m ready to eat some mails')
-        message.react('✉️');
+    
       
 console.log("I am ready to receive and Send Mails")
 
