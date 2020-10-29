@@ -21,7 +21,7 @@ client.on("channelDelete", (channel) => {
         .setAuthor("OFFlimits bot", "https://media.discordapp.net/attachments/726594273889484960/726853235998064640/off.png?width=452&height=452")
         .setColor('RED')
         .setThumbnail('https://media.discordapp.net/attachments/726594273889484960/747501951851298826/source.gif?width=420&height=420')
-        .setDescription("Your mail was closed by moderator\nIf you have any questions you can open mail again by sending message here.")
+        .setDescription("Your mail was closed by an Admin\nIf you have any questions you can open mail again by sending message here.")
         .setFooter('Developed by CHASE', 'https://media.discordapp.net/attachments/726594273889484960/747501951851298826/source.gif?width=420&height=420')
     return person.send(yembed)
     
