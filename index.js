@@ -3,6 +3,10 @@ const client = new discord.Client()
 const { token, prefix, ServerID } = require("./config.json")
 
 client.on("ready", () => {
+    const channel = '727010840074780674'
+      channel.message.send('m ready to eat some mails').then((message) => {
+        message.react('✉️');
+      }
 console.log("I am ready to receive and Send Mails")
 
 
@@ -30,16 +34,6 @@ client.on("channelDelete", (channel) => {
 
 
 client.on("message", async message => {
-     const channel = await bot.channels.fetch('727010840074780674')
-
-  channel.messages.fetch().then((messages) => {
-    
-      channel.send('m ready to eat some mails').then((message) => {
-        message.react('✉️');
-      })
-    
-    
-  })
   if(message.author.bot) return;
 
   let args = message.content.slice(prefix.length).split(' ');
