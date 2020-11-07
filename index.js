@@ -1,7 +1,7 @@
 const discord = require("discord.js");
 const client = new discord.Client()
 const { token, prefix, ServerID } = require("./config.json")
-
+const {MessageEmbed} = require("discord.js");
 client.on("ready", () => {
 console.log("I am ready to receive and Send Mails")
 
@@ -290,3 +290,48 @@ client.on('message', message => {
       }
     }
     });
+    client.on('message', message => {
+        if (message.channel.type != 'text' || message.author.bot)
+          return;
+      
+        let command = message.content.split(' ')[0].slice(1);
+        let args = message.content.replace('.' + command, '').trim();
+        let isBotOwner = message.author.id == '644614223917219872';
+      
+        switch (command) {
+          case 'mailrestart': {
+            if (!message.member.hasPermission(["MANAGE_MESSAGES"])) return message.channel.send("Cool right? but you cant use it, ADMINS ONLY!!!")
+      
+            message.reply('The bot will now restart.\n'
+            + 'Confirm with `yes` or deny with `no`.');
+    
+    // First argument is a filter function - which is made of conditions
+    // m is a 'Message' object
+    message.channel.awaitMessages(m => m.author.id == message.author.id,
+            {max: 1, time: 30000}).then(collected => {
+                    // only accept messages by the user who sent the command
+                    // accept only 1 message, and return the promise after 30000ms = 30s
+    
+                    // first (and, in this case, only) message of the collection
+                    if (collected.first().content.toLowerCase() == 'yes') {
+                      message.reply('Shutting down...');
+                      client.destroy();
+                      client.login(token);
+                      client.user.setActivity("for limits", { type: "WATCHING"})
+                          console.log(`Yo bitch I'm online!`);
+                           message.channel.send('restarted')
+        
+                    }
+                    if (collected.first().content.toLowerCase() == 'no') {
+                      message.reply('operation canceled');
+                    }
+                    
+            }).catch(() => {
+                    message.reply('No reaction after 30 seconds, operation canceled');
+            });
+
+    break;
+}  
+}
+    });
+    
